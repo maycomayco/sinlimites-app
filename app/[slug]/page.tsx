@@ -7,24 +7,25 @@ type Props = {
 }
 
 export default async function Page({ params: { slug } }: Props) {
-  console.log(slug)
-  const person = ''
+  const links = await api.links.getAll()
 
-  const users = await api.users.getAll()
-  const user = users.find((user) => user.name === slug)
+  // const races = await api.races.fetch(slug)
+  const link = links.find((link) => link.title === slug)
 
-  if (!user) return notFound()
+  if (!link) return notFound()
 
-  const links = await api.links.fetch(user.url)
+  const races = await api.races.fetch(link.link)
+
+  console.log(races)
 
   return (
     <main>
-      <h1>{user.name}</h1>
+      <h1>Carreras</h1>
       <br />
       <ul>
-        {links.map((link) => (
-          <li key={link.url}>
-            <a href={link.url}>{link.label}</a>
+        {races.map((race) => (
+          <li key={race.name.replace(' ', '-').toLowerCase()}>
+            <p>{race.name}</p>
           </li>
         ))}
       </ul>
