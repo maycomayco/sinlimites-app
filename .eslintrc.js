@@ -1,7 +1,7 @@
 module.exports = {
   extends: ['next/core-web-vitals', 'plugin:prettier/recommended'],
   rules: {
-    'no-unused-vars': 'warn',
+    'no-unused-vars': 'error',
     'no-console': 'warn',
     'prettier/prettier': [
       'error',
