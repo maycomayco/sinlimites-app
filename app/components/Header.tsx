@@ -2,19 +2,18 @@ import Image from 'next/image'
 
 export default function Header() {
   return (
-    <div className="p-6 max-w-sm mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+    <div className="p-6 mx-auto flex items-center justify-center gap-4">
       <div className="shrink-0">
         <Image
-          alt="ChitChat Logo"
-          className="h-12 w-12"
-          height={60}
-          src="https://randomuser.me/api/portraits/men/77.jpg"
-          width={60}
+          alt="Sin Limites Training Logo"
+          height={90}
+          src="https://d1fdloi71mui9q.cloudfront.net/nTwbCUzTymqtqfWpMMds_cvWMkSuWko58WcFM"
+          width={90}
         />
       </div>
       <div>
-        <h1 className="text-4xl font-medium text-black">Sin limites</h1>
-        <small className="text-black">Donde nada ni nadie esta chequeado</small>
+        <h1 className="text-4xl font-medium font-medium">Sin Limites</h1>
+        <small className="">Donde nada ni nadie esta chequeado</small>
       </div>
     </div>
   )
