@@ -16,8 +16,6 @@ export default async function Page({ params: { slug } }: Props) {
 
   const races = await api.races.fetch(link.link)
 
-  console.log(races)
-
   return (
     <main>
       <h1>Carreras</h1>
