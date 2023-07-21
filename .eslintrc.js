@@ -13,6 +13,8 @@ module.exports = {
         singleQuote: true,
         arrowParens: 'always',
         endOfLine: 'auto',
+        plugins: ['prettier-plugin-tailwindcss'],
+        pluginSearchDirs: false,
       },
     ],
     'import/order': [
