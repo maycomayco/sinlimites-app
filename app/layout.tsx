@@ -11,7 +11,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body
-        className={`${hepta.className} container bg-neutral-600 text-white min-h-screen px-4`}
+        className={`${hepta.className} container min-h-screen bg-neutral-600 px-4 text-white`}
       >
         {children}
       </body>
