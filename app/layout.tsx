@@ -11,7 +11,7 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body
-        className={`${nunito.className} container min-h-screen bg-[#211F20] px-4 text-white`}
+        className={`${nunito.className} container mx-auto min-h-screen max-w-screen-sm bg-[#211F20] px-4 text-white`}
       >
         {children}
       </body>
