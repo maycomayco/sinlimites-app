@@ -2,7 +2,6 @@ import React from 'react'
 
 import api from '@/lib/api'
 
-import Header from './components/Header'
 import BoxLink from './components/BoxLink'
 
 export default async function Home() {
@@ -10,7 +9,6 @@ export default async function Home() {
 
   return (
     <main>
-      <Header />
       <ul className="flex flex-col gap-2">
         <BoxLink content="Sobre nosotros" />
         {links.map((link) => (
