@@ -1,7 +1,8 @@
+import { Nunito } from 'next/font/google'
+
 import Header from './components/Header'
 
 import './globals.css'
-import { Nunito } from 'next/font/google'
 
 type Props = {
   children: React.ReactNode

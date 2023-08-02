@@ -19,8 +19,6 @@ export default async function Carreras() {
 
   const races = await api.races.getAll(filteredLinks[0].link)
 
-  console.log({ races })
-
   return (
     <main>
       <ListOfBoxLink>
