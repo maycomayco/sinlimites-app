@@ -10,4 +10,8 @@ type Race = {
   discountCode: string
   imageUrl: string
   url: string
+  slug: string
+  description: string
+  place: string
+  distance: string
 }
