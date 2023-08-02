@@ -1,9 +1,10 @@
 import { notFound } from 'next/navigation'
+import React from 'react'
 
 import api from '@/lib/api'
-import { toKebabCase } from '@/lib/utils'
 
-import Header from '../components/Header'
+import BoxLink from '../components/BoxLink'
+import ListOfBoxLink from '../components/ListOfBoxLink'
 
 const pageSlug = 'carreras'
 
@@ -16,20 +17,19 @@ export default async function Carreras() {
 
   if (filteredLinks.length === 0) return notFound()
 
-  const races = await api.races.fetch(filteredLinks[0].link)
+  const races = await api.races.getAll(filteredLinks[0].link)
+
+  console.log({ races })
 
   return (
     <main>
-      <Header />
-      <h2>Carreras</h2>
-      <hr />
-      <ul>
-        {races.map((race) => (
-          <li key={toKebabCase(race.name)}>
-            <p>{race.name}</p>
-          </li>
+      <ListOfBoxLink>
+        {races.map((race, idx) => (
+          <React.Fragment key={idx}>
+            <BoxLink content={race.name} path={pageSlug} />
+          </React.Fragment>
         ))}
-      </ul>
+      </ListOfBoxLink>
     </main>
   )
 }
