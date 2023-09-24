@@ -1,5 +1,6 @@
 import { getRaces, getRaceBySlug } from './races'
 import { getAll } from './links'
+import { getVideos } from './videos'
 
 const api = {
   races: {
@@ -8,6 +9,9 @@ const api = {
   },
   links: {
     getAll: async () => await getAll(),
+  },
+  videos: {
+    getAll: async (from: string) => await getVideos(from),
   },
 }
 

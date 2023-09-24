@@ -15,3 +15,9 @@ type Race = {
   place: string
   distance: string
 }
+
+type Video = {
+  date: string
+  title: string
+  url: string
+}
