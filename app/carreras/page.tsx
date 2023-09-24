@@ -19,24 +19,29 @@ export default async function Carreras() {
 
   const races = await api.races.getAll(filteredLinks[0].link)
 
-  const racesByMonth = races.reduce((acc, race) => {
-    const date = new Date(
-      +race.date.split('/')[2],
-      +race.date.split('/')[1] - 1,
-      +race.date.split('/')[0],
-    )
-    const month = date.toLocaleString('es-AR', { month: 'long' }).toLowerCase()
+  const racesByMonth = races.reduce(
+    (acc, race) => {
+      const date = new Date(
+        +race.date.split('/')[2],
+        +race.date.split('/')[1] - 1,
+        +race.date.split('/')[0],
+      )
+      const month = date
+        .toLocaleString('es-AR', { month: 'long' })
+        .toLowerCase()
 
-    // controlo que el acc no contengo el mes mapeado aun
-    if (!acc[month]) {
-      acc[month] = []
-    }
+      // controlo que el acc no contengo el mes mapeado aun
+      if (!acc[month as keyof typeof acc]) {
+        acc[month] = []
+      }
 
-    // console.log(acc)
-    acc[month].push(race)
+      // console.log(acc)
+      acc[month as keyof typeof acc].push(race)
 
-    return acc
-  }, [])
+      return acc
+    },
+    {} as { [key: string]: Race[] },
+  )
 
   return (
     <main>
@@ -47,7 +52,7 @@ export default async function Carreras() {
             <React.Fragment key={idx}>
               <h2>{race[0]}</h2>
               {race[1].map((r) => (
-                <BoxLink content={r.name} path={pageSlug} />
+                <BoxLink key={r.slug} content={r.name} path={pageSlug} />
               ))}
             </React.Fragment>
           )
