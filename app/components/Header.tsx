@@ -15,7 +15,7 @@ export default function Header() {
         </Link>
       </div>
       <div>
-        <h1 className="text-3xl font-medium">Sin Limites</h1>
+        <h1 className="text-3xl font-extrabold">Sin Limites</h1>
         <small>Donde nada ni nadie esta chequeado</small>
       </div>
     </div>

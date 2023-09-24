@@ -15,7 +15,10 @@ export default function BoxLink({ content, path }: Props) {
 
   return (
     <li className="rounded-2xl border-2 border-solid border-black bg-white px-10 py-5 text-center text-black">
-      <Link className="flex items-center justify-between text-xl" href={href}>
+      <Link
+        className="flex items-center justify-between text-xl tracking-tight"
+        href={href}
+      >
         <p>{content}</p>
         <FaAngleRight />
       </Link>
